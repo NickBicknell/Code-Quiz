@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    font-family: monospace;
+    background-color: rgb(118, 207, 248);
+}
+
+header{
+    padding-bottom: 5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 40px;
+    color: rgb(0, 68, 255);
+    margin-bottom: 3em;
+    background-color: white;
+}
+.timer{
+    display: flex;
+    padding: 20px 50px;
+    color: red;
+}
+.container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: white;
+    border-radius: 2em;
+    border: 3px solid black;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.highscore {
+    display: flex;
+    padding: 20px 50px;
+}
+.btn {
+    color: white;
+    background-color: blue;
+}
+#answers {
+    display: flex;
+    flex-direction: column;
+    
+}
