@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,25 +9,49 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Code Quiz</title>
 </head>
+
 <body>
     <header>
         <a href="./highscore.html" id="highscore" class="highscore">HighScores</a>
-        <h3 class="timer">Time: <span id="timer">0</span></h3>
+        <h3 class="timer" id="timer"></h3>
     </header>
-    <div class="container flex-column flex-center" id="home">
-            <h1>Javascript Quiz</h1>
-            <button id="start-btn" class="start-btn btn">Start</button>
+    <div class="container" id="home">
+        <h1>Javascript Quiz</h1>
+        <button id="start-btn" class="btn">Start</button>
     </div>
-    <div class="container" id="quiz">
-        <h1 id="question"></h1>
-        <div id="answers">
-            <button type="button" class="btn" id="0"></button>
-            <button type="button" class="btn" id="1"></button>
-            <button type="button" class="btn" id="2"></button>
-            <button type="button" class="btn" id="3"></button>
+    <div class="container hide" id="quiz">
+        <h2 id="question">Question...</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="a" class="answer" />
+                <label for="a" id="a_text">Answer...</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="b" class="answer" />
+                <label for="b" id="b_text">Answer...</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="c" class="answer" />
+                <label for="c" id="c_text">Answer...</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="d" class="answer" />
+                <label for="d" id="d_text">Answer...</label>
+            </li>
+        </ul>
+        <button class="btn" id="next-btn">Next</button>
+    </div>
+    <p class="is-correct" id="correct-or-incorrect"></p>
+    <div class="hide" id="input-score">
+        <div class="input-score-container">
+            <h1>Congratulations!</h1>
+            <p class="score">Your final score: <span id="score"></span></p>
+            <p class="score">Enter initals: <input type="text" id="initials"></p>
+            <button class="score-btn" id="submit-initials">Submit</button>
         </div>
     </div>
 
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
