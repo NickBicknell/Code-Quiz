@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <a href="./highscore.html" id="highscore" class="highscore">HighScores</a>
+        <button id="highscore" class="highscore">HighScores</button>
         <h3 class="timer" id="timer"></h3>
     </header>
     <div class="container" id="home">
@@ -46,8 +46,24 @@
         <div class="input-score-container">
             <h1>Congratulations!</h1>
             <p class="score">Your final score: <span id="score"></span></p>
-            <p class="score">Enter initals: <input type="text" id="initials"></p>
-            <button class="score-btn" id="submit-initials">Submit</button>
+            <p class="score">Enter initals: <input type="text" placeholder="initials" id="initials"></p>
+            <button class="score-btn" id="submit-score">Submit</button>
+        </div>
+    </div>
+    <div class="hide" id="you-lose">
+        <div class="lose-container hide">
+            <h1>Out of time!</h1>
+            <button class="try-again-btn" id="try-again-btn">Try again!</button>
+        </div>
+    </div>
+    <div class="hide" id="highscore-page">
+        <div class="highscore-container">
+            <div class="highscore-header">
+                <h1 class="highscore-h1">Highscores!</h1>
+            </div>
+            <ul class="highscore-ul" id="scores"></ul>
+            <button class="highscore-btn" id="go-back">Return to Quiz</button>
+            <button class="highscore-btn" id="clear-scores">Clear Scores</button>
         </div>
     </div>
 
