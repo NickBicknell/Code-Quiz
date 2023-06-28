@@ -1,3 +1,4 @@
+// Quiz Questions Array
 var questions = [
     {
         question: "What method returns a strings value as all uppercase characters?",
@@ -48,10 +49,11 @@ var questions = [
         correct: "b",
     },
 ];
-
+// Start page variables
 var homeEl = document.querySelector("#home");
 var startBtnEl = document.querySelector("#start-btn");
-var nextBtnEl = document.getElementById("next-btn");
+var highscoreLink = document.querySelector("#highscore");
+// Quiz page variables
 var quizEl = document.querySelector("#quiz");
 var questionEl = document.getElementById("question");
 var answerEl = document.querySelectorAll(".answer");
@@ -60,25 +62,29 @@ var aText = document.getElementById("a_text");
 var bText = document.getElementById("b_text");
 var cText = document.getElementById("c_text");
 var dText = document.getElementById("d_text");
-var score = 0;
-var userScoreEl = document.querySelector("#score");
+var nextBtnEl = document.getElementById("next-btn");
+var currentQuestion = 0;
+// Score and submit initials page variables
 var inputScore = document.querySelector("#input-score");
+var initialsEl = document.querySelector("#initials");
+var userScoreEl = document.querySelector("#score");
+var submitScoreBtn = document.querySelector("#submit-score");
+var score = 0;
+// Out of time page variables
 var youLost = document.querySelector("#you-lose");
 var tryAgainBtn = document.querySelector("#try-again-btn");
-var submitScoreBtn = document.querySelector("#submit-score");
+// Highscore page variables
 var highscoreEl = document.querySelector("#highscore-page");
 var goBackBtn = document.querySelector("#go-back");
 var clearScoreBtn = document.querySelector("#clear-scores");
 var scoresEl = document.querySelector("#scores");
-var initialsEl = document.querySelector("#initials");
-var highscoreLink = document.querySelector("#highscore");
-var currentQuestion = 0;
 var highscores = [];
+// Timer variables
 var timerEl = document.getElementById("timer");
 var timeLeft = 75;
 var timeSpent = 0;
 var timeInterval;
-
+// View highscore link button click event w/ function
 highscoreLink.addEventListener("click", function() {
     homeEl.classList.add('hide');
     quizEl.classList.add('hide');
@@ -89,10 +95,11 @@ highscoreLink.addEventListener("click", function() {
     initScores();
     stopTimer();
 });
-
+// Start quiz button click event
 startBtnEl.addEventListener("click", startTimer);
+// Try again button click event
 tryAgainBtn.addEventListener("click", startOver);
-
+// function to start the timer
 function startTimer() {
     timerEl.textContent = "Time: " + timeLeft;
     startQuiz();
@@ -105,15 +112,15 @@ function startTimer() {
         }
     }, 1000);
 };
-
+// function to stop the timer
 function stopTimer() {
     clearInterval(timeInterval);
 };
-
+// function to uncheck all/previous selected answer
 function deselectAnswers() {
     answerEl.forEach((answer) => (answer.checked = false));
 };
-
+// function to get selected answer
 function getSelected() {
     var answer;
     answerEl.forEach((answerEl) => {
@@ -122,7 +129,7 @@ function getSelected() {
     console.log(answer);
     return answer;
 };
-
+// function to start the quiz
 function startQuiz() {
     homeEl.classList.add("hide");
     quizEl.classList.remove("hide");
@@ -135,7 +142,7 @@ function startQuiz() {
     dText.textContent = currentQuestionData.d;
 
 };
-
+// function to load the next question
 function nextQuestion() {
     currentQuestion++;
     if (questions[currentQuestion]) {
@@ -154,7 +161,7 @@ function nextQuestion() {
         userScoreEl.textContent = score;
     }   
 };
-
+// click event function to go to the next question
 nextBtnEl.addEventListener("click", () => {
     var answer = getSelected();
     if (answer) {
@@ -168,22 +175,22 @@ nextBtnEl.addEventListener("click", () => {
         };
     };
 });
-
+// Out of time page function
 function youLose() {
     quizEl.classList.add('hide');
     youLost.classList.remove('hide');
     isCorrect.classList.add('hide');
     timerEl.classList.add('hide');
 };
-
+// function that starts quiz over
 function startOver () {
     refreshPage();
 };
-
+// function that refreshes the page
 function refreshPage() {
     location.reload()
 };
-
+// function that submits score w/ initials to local storage
 function submitScore() {
     var score = userScoreEl.textContent;
     var initials = initialsEl.value;
@@ -196,22 +203,21 @@ function submitScore() {
     inputScore.classList.add('hide');
     initScores();
 };
-
+// click event to start quiz over on high score page
 goBackBtn.addEventListener("click", refreshPage);
-
+// click event to submit score to local storage
 submitScoreBtn.addEventListener("click", submitScore);
-
+// function to clear scores saved in local storage
 function clearScores() {
     highscores = [];
     localStorage.setItem("scores", JSON.stringify(highscores));
     loadHighscores();
 };
-
+// clear score button click event on highscore page
 clearScoreBtn.addEventListener("click", clearScores);
-
+// function to load the highscores saved to local storage and load them onto the page
 function loadHighscores() {
     scoresEl.innerHTML="";
-    
     console.log(highscores);
     for (let i = 0; i < highscores.length; i++) {
         var newScore = highscores[i];
@@ -223,7 +229,7 @@ function loadHighscores() {
 
     }
 };
-
+// function to check if the stored scores are not null
 function initScores() {
     var storedScores = JSON.parse(localStorage.getItem("scores"));
     if (storedScores !== null) {
@@ -231,6 +237,7 @@ function initScores() {
       }
       loadHighscores();
 };
+// function to store the highscore in local storage
 function storeHighscores() {
     localStorage.setItem("highscores", JSON.stringify(highscores));
 };
