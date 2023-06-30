@@ -4,7 +4,7 @@
 }
 /* body styling */
 body {
-    background-color: rgb(118, 207, 248);
+    background-image: linear-gradient(black , rgb(146, 146, 146));
     font-family: monospace;
     font-size: 28px;
     overflow: hidden;
@@ -20,7 +20,7 @@ body {
     max-width: 80%;
     margin: 0 auto;
     padding: 2em;
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 2em;
     border: 3px solid black;
 }
@@ -33,12 +33,12 @@ header{
 /* starting/home page styling */
 h1 {
     font-size: 40px;
-    color: rgb(0, 68, 255);
+    color: rgb(184, 13, 13);
     margin-bottom: 3em;
-    background-color: white;
+    background-color: whitesmoke;
 }
 .btn {
-    background-color: rgb(0, 47, 255);
+    background-color: rgb(184, 13, 13);
     color: #fff;
     border: none;
     display: block;
@@ -49,7 +49,7 @@ h1 {
     padding: 20px;
 }
 .btn:hover {
-    background-color: rgb(21, 54, 202);
+    background-color: rgb(212, 29, 29);
 }
 /* timer styling */
 .timer{
@@ -65,10 +65,10 @@ h1 {
 /* quiz styling */
 h2 {
     font-size: 30px;
-    color: rgb(0, 68, 255);
+    color: rgb(184, 13, 13);
     padding: 1rem;
     margin-bottom: 10px;
-    background-color: white;
+    background-color: whitesmoke;
 }
 ul {
     list-style-type: none;
@@ -93,7 +93,7 @@ ul li label {
 }
 .is-correct {
     padding: 20px;
-    color: black;
+    color: whitesmoke;
     text-align: center;
     font-style: italic;
     font-size: 22px;
@@ -113,17 +113,19 @@ ul li label {
     margin: 0 auto;
     padding: 2em 6em;
     border-radius: 2em;
+    background-color: whitesmoke;
 }
 .input-score-container h1{
-    background-color: rgb(118, 207, 248);
+    background-color: whitesmoke;
     font-size: 50px;
+    align-self: center;
 }
 .input-score-container p{
     font-size: 28px;
     padding-bottom: 10px;
 }
 .score-btn {
-    background-color: rgb(0, 47, 255);
+    background-color: rgb(184, 13, 13);
     color: #fff;
     border: none;
     display: block;
@@ -134,7 +136,7 @@ ul li label {
     padding: 15px;
 }
 .score-btn:hover {
-    background-color: rgb(21, 54, 202);
+    background-color: rgb(212, 29, 29);
 }
 /* highscore page styling */
 .highscore-container {
@@ -143,7 +145,7 @@ ul li label {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(47, 182, 245);
+    background-color: whitesmoke;
     max-width: 80%;
     margin: 0 auto;
     padding: 2em;
@@ -156,12 +158,12 @@ ul li label {
     padding: 0;
 }
 .highscore-header h1{
-    background-color: rgb(47, 182, 245);
+    background-color: whitesmoke;
     font-size: 50px;
 }
 .highscore-btn {
-    background-color: rgb(0, 47, 255);
-    color: #fff;
+    background-color: rgb(184, 13, 13);
+    color: whitesmoke;
     border: none;
     display: block;
     width: 40%;
@@ -172,7 +174,7 @@ ul li label {
     margin-top: 20px;
 }
 .highscore-btn:hover {
-    background-color: rgb(21, 54, 202);
+    background-color: rgb(212, 29, 29);
 }
 .highscore-h1 {
     padding: 0;
@@ -184,14 +186,14 @@ ul li label {
     margin: 0;
 }
 .highscore-ul li {
-    color: rgb(7, 10, 190);
+    color: rgb(184, 13, 13);
     font-size: 30px;
     margin: 15px;
     padding: 5px;
 }
 /* try again/out of time page styling */
 .try-again-btn {
-    background-color: rgb(0, 47, 255);
+    background-color: rgb(184, 13, 13);
     color: #fff;
     border: none;
     display: block;
@@ -202,19 +204,21 @@ ul li label {
     padding: 15px;
 }
 .try-again-btn:hover {
-    background-color: rgb(21, 54, 202);
+    background-color: rgb(212, 29, 29);
 }
 .lose-container {
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     max-width: 80%;
     margin: 0 auto;
-    padding: 2em 10em;
+    padding: 2em 1em;
     border-radius: 2em;
+    background-color: whitesmoke;
 }
 .lose-container h1{
-    background-color: rgb(118, 207, 248);
+    background-color: whitesmoke;
+    margin-bottom: 50px;
 }

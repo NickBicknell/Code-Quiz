@@ -226,8 +226,8 @@ function loadHighscores() {
         li.textContent = newScore;
         li.setAttribute("data-index", i);
         scoresEl.appendChild(li);
-
     }
+    highscoreLink.classList.add('hide');
 };
 // function to check if the stored scores are not null
 function initScores() {
